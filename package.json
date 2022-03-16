@@ -1,0 +1,26 @@
+{
+  "name": "e-commerce-web-app",
+  "version": "1.0.0",
+  "description": "MERN",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulmoeed11/E-commerce-Web-App.git"
+  },
+  "author": "Abdul Moeed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abdulmoeed11/E-commerce-Web-App/issues"
+  },
+  "homepage": "https://github.com/abdulmoeed11/E-commerce-Web-App#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

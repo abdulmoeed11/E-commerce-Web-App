@@ -40,7 +40,7 @@ const Rating = ({ value, text }) => {
         <i className={rating_stars3} />
         <i className={rating_stars4} />
         <i className={rating_stars5} />
-        <text>{`${text}`}</text>
+        <strong>{`${text}`}</strong>
       </span>
     </div>
   );
