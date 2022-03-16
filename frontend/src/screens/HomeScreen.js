@@ -9,7 +9,6 @@ const HomeScreen = () => {
     const getProducts = async () => {
       const { data } = await axios.get("http://localhost:5000/api/products");
       setProducts(data);
-      console.log(data);
     };
 
     getProducts();
