@@ -1,8 +1,8 @@
 const express = require("express");
 
-const products = require("./data/products");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+const productRouter = require("./routes/productRouter");
 
 dotenv.config();
 
@@ -13,14 +13,7 @@ app.get("/", (req, res) => {
   res.send("Api is runing");
 });
 
-app.get("/api/products", (req, res) => {
-  res.json(products);
-});
-
-app.get("/api/products/:id", (req, res) => {
-  const product = products.find((p) => req.params.id == p._id);
-  res.json(product);
-});
+app.use("/api/products", productRouter);
 
 const PORT = process.env.PORT || 5000;
 
