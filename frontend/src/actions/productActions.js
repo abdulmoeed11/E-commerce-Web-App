@@ -9,8 +9,8 @@ export const productList = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
 
-    const { data } = axios.get("/api/products");
-
+    const { data } = await axios.get("http://localhost:5000/api/products");
+    console.log(data);
     dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
