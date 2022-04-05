@@ -1,8 +1,6 @@
 const express = require("express");
 const asynHandler = require("express-async-handler");
-// const { async } = require("rxjs");
 
-const mongoose = require("mongoose");
 const Product = require("../models/productModel");
 
 const router = express.Router();
