@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
-import axios from "axios";
 import Product from "../components/Products";
 import { listProduct } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
+import Loader from "../components/Loader";
+import Message from "../components/Message";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -13,13 +14,13 @@ const HomeScreen = () => {
   useEffect(() => {
     dispatch(listProduct());
   }, [dispatch]);
-  // const products = [];
+
   return (
     <>
       {loading ? (
-        <h1>loading...</h1>
+        <Loader />
       ) : error ? (
-        <h1>{error}</h1>
+        <Message children={error} />
       ) : (
         <Row>
           {products.map((product) => (
