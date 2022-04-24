@@ -7,12 +7,12 @@ import {
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
 } from "../constants/productConstants";
+import { BACKURL } from "../constants/url";
 
 export const listProduct = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
-
-    const { data } = await axios.get("http://localhost:5000/api/products");
+    const { data } = await axios.get(`${BACKURL}/api/products`);
     console.log(data);
     dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
   } catch (error) {
@@ -30,10 +30,8 @@ export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(
-      `http://localhost:5000/api/products/${id}`
-    );
-    console.log(data);
+    const { data } = await axios.get(`${BACKURL}/api/products/${id}`);
+
     dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
